@@ -15,6 +15,7 @@ typedef struct AudioCommand {
   INT16 SFXIndex;
   LPWSTR TextToSpeech;
   double WaitDuration;
+  AudioCommand* NextCommand;
 } AudioCommand;
 
 [
@@ -27,12 +28,12 @@ interface IAudioServer : IDispatch {
 	[id(2)] HRESULT Stop();
 	[id(3)] HRESULT FadeIn();
 	[id(4)] HRESULT FadeOut();
-	[id(5)] HRESULT Push();
-	[id(6)] HRESULT GetVoiceCount();
-	[id(7)] HRESULT GetDefaultVoice();
-	[id(8)] HRESULT GetVoiceProperty();
-	[id(9)] HRESULT SetDefaultVoice();
-	[id(10)] HRESULT SetVoiceProperty();
+	[id(5)] HRESULT Push([in, annotation("_In_")] AudioCommand *pAudioCommand);
+	[id(6)] HRESULT GetVoiceCount([out, annotation("_Out_")] INT32 *pVoiceCount);
+	[id(7)] HRESULT GetDefaultVoice([out, annotation("_Out_")] INT32 *pVoiceIndex);
+	[id(8)] HRESULT GetVoiceProperty([in, annotation("_In_")] INT32 voiceIndex, [out, annotation("_Out_")] VoiceProperty *pProperty);
+	[id(9)] HRESULT SetDefaultVoice([in, annotation("_In_")] INT32 voiceIndex);
+	[id(10)] HRESULT SetVoiceProperty([in, annotation("_In_")] VoiceProperty **ppProperty);
 }
 [
 	uuid(30C033DF-A924-406B-81CE-FAEF6DFEA5BD),
