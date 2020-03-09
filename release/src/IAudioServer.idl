@@ -1,17 +1,14 @@
 import "oaidl.idl";
 import "ocidl.idl";
-cpp_quote("#include <cstdint>")
+typedef struct AudioCommand {
+	INT16 AudioCommandType;
+	INT16 SFXIndex;
+} AudioCommand;
 [
 	object,
 	dual,
 	uuid(A25BD5CE-0DFD-4BD4-B85C-A77373261367)
 ]
-typedef struct tagAudioCommand {
-	INT16 AudioCommandType;
-	INT16 SFXIndex;
-	double WaitDuration;
-	wchar_t *TextToSpeak;
-} AudioCommand;
 interface IAudioServer : IDispatch {
 	[id(1)] HRESULT Start();
 	[id(2)] HRESULT Stop();
