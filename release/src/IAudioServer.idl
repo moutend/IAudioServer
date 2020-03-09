@@ -7,8 +7,8 @@ cpp_quote("#include <cstdint>")
 	uuid(A25BD5CE-0DFD-4BD4-B85C-A77373261367)
 ]
 typedef struct {
-	int16_t AudioCommandType;
-	int16_t SFXIndex;
+	INT16 AudioCommandType;
+	INT16 SFXIndex;
 	double WaitDuration;
 	wchar_t *TextToSpeak;
 } AudioCommand;
