@@ -1,0 +1,35 @@
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	dual,
+	uuid(A09AFC29-31EA-462a-9DF0-40A7D2D16E76)
+]
+interface IAudioServer : IDispatch {
+	[id(1)] HRESULT Start();
+	[id(2)] HRESULT Stop();
+	[id(3)] HRESULT FadeIn();
+	[id(4)] HRESULT FadeOut();
+	[id(5)] HRESULT Push();
+	[id(6)] HRESULT GetVoiceCount();
+	[id(7)] HRESULT GetDefaultVoice();
+	[id(8)] HRESULT GetVoiceProperty();
+	[id(9)] HRESULT SetDefaultVoice();
+	[id(10)] HRESULT SetVoiceProperty();
+}
+[
+	uuid(CFE6456E-8930-416d-B169-09B06AC9ECE2),
+	version(1.0),
+	helpstring("Type library for audio server")
+]
+library AudioServerLib {
+	importlib("stdole2.tlb");
+	[
+		uuid(79BDE8FF-CEE2-4c6d-A7B2-BED85A67A708)
+	]
+	coclass AudioServer
+	{
+		[default] interface IAudioServer;
+	}
+}
