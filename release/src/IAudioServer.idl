@@ -7,10 +7,10 @@ cpp_quote("#include <cstdint>")
 	uuid(A25BD5CE-0DFD-4BD4-B85C-A77373261367)
 ]
 typedef struct {
-	int16_t Type;
+	int16_t AudioCommandType;
 	int16_t SFXIndex;
 	double WaitDuration;
-	wchar_t *Text;
+	wchar_t *TextToSpeak;
 } AudioCommand;
 interface IAudioServer : IDispatch {
 	[id(1)] HRESULT Start();
