@@ -1,9 +1,17 @@
 import "oaidl.idl";
 import "ocidl.idl";
+
+typedef struct VoiceProperty {
+  double SpeakingRate;
+  double Volume;
+  double Pitch;
+} VoiceProperty;
+
 typedef struct AudioCommand {
 	INT16 AudioCommandType;
 	INT16 SFXIndex;
 } AudioCommand;
+
 [
 	object,
 	dual,
