@@ -6,7 +6,7 @@ cpp_quote("#include <cstdint>")
 	dual,
 	uuid(A25BD5CE-0DFD-4BD4-B85C-A77373261367)
 ]
-typedef struct {
+typedef struct tagAudioCommand {
 	INT16 AudioCommandType;
 	INT16 SFXIndex;
 	double WaitDuration;
