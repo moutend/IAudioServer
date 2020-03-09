@@ -4,7 +4,7 @@ import "ocidl.idl";
 [
 	object,
 	dual,
-	uuid(A09AFC29-31EA-462a-9DF0-40A7D2D16E76)
+	uuid(A25BD5CE-0DFD-4BD4-B85C-A77373261367)
 ]
 interface IAudioServer : IDispatch {
 	[id(1)] HRESULT Start();
@@ -19,14 +19,14 @@ interface IAudioServer : IDispatch {
 	[id(10)] HRESULT SetVoiceProperty();
 }
 [
-	uuid(CFE6456E-8930-416d-B169-09B06AC9ECE2),
+	uuid(30C033DF-A924-406B-81CE-FAEF6DFEA5BD),
 	version(1.0),
 	helpstring("Type library for audio server")
 ]
 library AudioServerLib {
 	importlib("stdole2.tlb");
 	[
-		uuid(79BDE8FF-CEE2-4c6d-A7B2-BED85A67A708)
+		uuid(F9353078-F40A-4ED5-8354-039E805D2DF8)
 	]
 	coclass AudioServer
 	{
