@@ -30,9 +30,9 @@ interface IAudioServer : IDispatch {
 	[id(5)] HRESULT Push([in] AudioCommand **pAudioCommands, [in] INT32 numAudioCommands);
 	[id(6)] HRESULT GetVoiceCount([out] INT32 *pVoiceCount);
 	[id(7)] HRESULT GetDefaultVoice([out] INT32 *pVoiceIndex);
-	[id(8)] HRESULT GetVoiceProperty([in] INT32 voiceIndex, [out] VoiceProperty *pProperty);
+	[id(8)] HRESULT GetVoiceProperty([in] INT32 voiceIndex, [out] VoiceProperty **pVoiceProperty);
 	[id(9)] HRESULT SetDefaultVoice([in] INT32 voiceIndex);
-	[id(10)] HRESULT SetVoiceProperty([in] VoiceProperty **ppProperty);
+	[id(10)] HRESULT SetVoiceProperty([in] INT32 voiceIndex, [in] VoiceProperty *pVoiceProperty);
 }
 [
 	uuid(30C033DF-A924-406B-81CE-FAEF6DFEA5BD),
