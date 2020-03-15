@@ -1,21 +1,21 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
-typedef struct VoiceProperty {
+typedef struct RawVoiceProperty {
   INT16 Id;
   LPWSTR Language;
   LPWSTR DisplayName;
   double SpeakingRate;
   double Volume;
   double Pitch;
-} VoiceProperty;
+} RawVoiceProperty;
 
-typedef struct AudioCommand {
-  INT16 AudioCommandType;
+typedef struct RawCommand {
+  INT16 Type;
   INT16 SFXIndex;
   LPWSTR TextToSpeech;
   double WaitDuration;
-} AudioCommand;
+} RawCommand;
 
 [
 	object,
@@ -27,12 +27,12 @@ interface IAudioServer : IDispatch {
 	[id(2)] HRESULT Stop();
 	[id(3)] HRESULT FadeIn();
 	[id(4)] HRESULT FadeOut();
-	[id(5)] HRESULT Push([in] AudioCommand **pAudioCommands, [in] INT32 numAudioCommands);
+	[id(5)] HRESULT Push([in] RawCommand **pRawCommands, [in] INT32 numAudioCommands);
 	[id(6)] HRESULT GetVoiceCount([out] INT32 *pVoiceCount);
 	[id(7)] HRESULT GetDefaultVoice([out] INT32 *pVoiceIndex);
-	[id(8)] HRESULT GetVoiceProperty([in] INT32 voiceIndex, [out] VoiceProperty **pVoiceProperty);
+	[id(8)] HRESULT GetVoiceProperty([in] INT32 voiceIndex, [out] RawVoiceProperty **pRawVoiceProperty);
 	[id(9)] HRESULT SetDefaultVoice([in] INT32 voiceIndex);
-	[id(10)] HRESULT SetVoiceProperty([in] INT32 voiceIndex, [in] VoiceProperty *pVoiceProperty);
+	[id(10)] HRESULT SetVoiceProperty([in] INT32 voiceIndex, [in] RawVoiceProperty *pRawVoiceProperty);
 }
 [
 	uuid(30C033DF-A924-406B-81CE-FAEF6DFEA5BD),
