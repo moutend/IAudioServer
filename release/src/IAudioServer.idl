@@ -27,7 +27,7 @@ interface IAudioServer : IDispatch {
 	[id(2)] HRESULT Stop();
 	[id(3)] HRESULT FadeIn();
 	[id(4)] HRESULT FadeOut();
-	[id(5)] HRESULT Push([in] RawCommand **pRawCommands, [in] INT32 numAudioCommands);
+	[id(5)] HRESULT Push([in] RawCommand **pCommands, [in] INT32 commandsLength, [in] isForcePush);
 	[id(6)] HRESULT GetVoiceCount([out] INT32 *pVoiceCount);
 	[id(7)] HRESULT GetDefaultVoice([out] INT32 *pVoiceIndex);
 	[id(8)] HRESULT GetVoiceProperty([in] INT32 voiceIndex, [out] RawVoiceProperty **pRawVoiceProperty);
