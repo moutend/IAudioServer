@@ -2,7 +2,9 @@ import "oaidl.idl";
 import "ocidl.idl";
 
 typedef struct RawVoiceProperty {
-  INT16 Id;
+  INT32 Id;
+  INT16 LanguageLength;
+  INT16 DisplayNameLength;
   LPWSTR Language;
   LPWSTR DisplayName;
   double SpeakingRate;
