@@ -1,6 +1,8 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+typedef INT64 (__stdcall *NotifyIdleStateHandler)(INT64 id);
+
 typedef struct RawVoiceProperty {
   LPWSTR Language;
   LPWSTR DisplayName;
