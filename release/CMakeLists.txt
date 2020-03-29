@@ -18,7 +18,7 @@ file(REMOVE "${CMAKE_CURRENT_LIST_DIR}/src/dlldata.c")
 file(GLOB HEADERS "${CMAKE_CURRENT_LIST_DIR}/src/*.h")
 
 foreach(HEADER ${HEADERS})
-  file(COPY "${HEADER}" DESTINATION "${CMAKE_CURRENT_LIST_DIR}/include/AudioServer")
+  file(COPY "${HEADER}" DESTINATION "${CMAKE_CURRENT_LIST_DIR}/include/IAudioServer")
 endforeach()
 
 add_subdirectory(src)
