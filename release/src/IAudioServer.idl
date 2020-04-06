@@ -1,6 +1,13 @@
 import "oaidl.idl";
 import "ocidl.idl";
 
+typedef [v1_enum] enum {
+	LOGLEVEL_NONE = 0,
+	LOGLEVEL_INFO = 1,
+	LOGLEVEL_WARN = 2,
+	LOGLEVEL_FAIL = 3
+} LOGLEVEL;
+
 typedef INT64(__stdcall *NotifyIdleStateHandler)(INT64 id);
 
 typedef struct RawVoiceProperty {
@@ -24,7 +31,7 @@ typedef struct RawCommand {
 	uuid(A25BD5CE-0DFD-4BD4-B85C-A77373261367)
 ]
 interface IAudioServer : IDispatch {
-	[id(1), local] HRESULT Start();
+	[id(1), local] HRESULT Start([in] LPWSTR soundEffectsPath, [in] LPWSTR loggerURL, [in] LOGLEVEL level);
 	[id(2), local] HRESULT Stop();
 	[id(3), local] HRESULT FadeIn();
 	[id(4), local] HRESULT FadeOut();
