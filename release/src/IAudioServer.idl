@@ -42,7 +42,7 @@ interface IAudioServer : IDispatch {
 	[id(9), local] HRESULT SetDefaultVoice([in] INT32 voiceIndex);
 	[id(10), local] HRESULT SetVoiceProperty([in] INT32 voiceIndex, [in] RawVoiceProperty *pVoiceProperty);
 	[id(11), local] HRESULT SetNotifyIdleStateHandler([in] NotifyIdleStateHandler notifyIdleStateHandler);
-	[id(12), local] HRESULT TestArray([in] INT32 x);
+	[id(12), local] HRESULT TestArray([in] INT32 *pArray);
 }
 [
 	uuid(30C033DF-A924-406B-81CE-FAEF6DFEA5BD),
