@@ -22,7 +22,7 @@ typedef struct RawCommand {
   INT16 Type;
   INT16 SFXIndex;
   LPWSTR TextToSpeech;
-  double WaitDuration;
+  double SleepDuration;
 } RawCommand;
 
 [
@@ -33,8 +33,8 @@ typedef struct RawCommand {
 interface IAudioServer : IDispatch {
 	[id(1), local] HRESULT Start([in] LPWSTR soundEffectsPath, [in] LPWSTR loggerURL, [in] LOGLEVEL level);
 	[id(2), local] HRESULT Stop();
-	[id(3), local] HRESULT FadeIn();
-	[id(4), local] HRESULT FadeOut();
+	[id(3), local] HRESULT Restart();
+	[id(4), local] HRESULT Pause();
 	[id(5), local] HRESULT Push([in] RawCommand **pCommands, [in] INT32 commandsLength, [in] INT32 isForcePush);
 	[id(6), local] HRESULT GetVoiceCount([out] INT32 *pVoiceCount);
 	[id(7), local] HRESULT GetDefaultVoice([out] INT32 *pVoiceIndex);
