@@ -23,6 +23,7 @@ typedef struct RawCommand {
   INT16 SFXIndex;
   LPWSTR TextToSpeech;
   double SleepDuration;
+  double Pan;
 } RawCommand;
 
 [
